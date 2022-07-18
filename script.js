@@ -58,10 +58,23 @@ fetch("https://pachyderme.net/students.json")
                 header.appendChild(card)
 
                 let divfirstname = document.createElement("div")
-                divfirstname.classList.add('text-gray-900')
+                divfirstname.classList.add('text-red-600')
 
-                divfirstname.text = `prenom : ${studentsJSON.students[i].lastname}`
+                divfirstname.text = `Prenom : ${studentsJSON.students[i].firstname}`
                 card.appendChild(divfirstname).innerHTML = divfirstname.text
+
+                let divlastname = document.createElement("div")
+                divlastname.classList.add('text-green-900')
+
+                divlastname.text = `Nom : ${studentsJSON.students[i].lastname}`
+                card.appendChild(divlastname).innerHTML = divlastname.text
+
+                let divsex = document.createElement("div")
+                divsex.classList.add('text-blue-700')
+
+                divsex.text = `Sexe : ${studentsJSON.students[i].sex}`
+                card.appendChild(divsex).innerHTML = divsex.text
+
             }
         })
     });
