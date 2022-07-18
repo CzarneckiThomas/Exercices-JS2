@@ -1,4 +1,4 @@
-document.querySelector("#validate").addEventListener("click", () => {
+document.querySelector("#validate").addEventListener("click"){
     var myImage = document.querySelector("#myImage");
     fetch("https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png")
         .then(response => response.blob())
@@ -7,3 +7,5 @@ document.querySelector("#validate").addEventListener("click", () => {
             myImage.src = objectURL;
         });
 }
+
+
