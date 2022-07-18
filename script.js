@@ -38,7 +38,11 @@ myButton.addEventListener("click", function (event) {
 var students = ["Alexandre.C","Alexandre.B","Benoît","Donatien","Hugo","Myriam","Youcef","Nicolas","Vlad",
 "Quentin rmc","Quentin Kiou","Steven","Loïc","Julian","Maxence","Thomas","Amandine", "Tristan"];
 
-var studentsDiv = document.querySelector("#students");
+// var studentsDiv = document.querySelector("#students");
+const header = document.querySelector('#header')
+const carte = document.querySelector('#carte')
+
+
 fetch("https://pachyderme.net/students.json")
     .then(response => response.json())
     .then(function (studentsJSON) {
@@ -46,5 +50,20 @@ fetch("https://pachyderme.net/students.json")
         studentsJSON.students.forEach(function (student)
         {
             console.log(student)
+
+
+            for (var i = 0; i < studentsJSON.students.length; i++ ){
+
+                let card = document.createElement("div")
+                header.appendChild(card)
+
+                let divfirstname = document.createElement("div")
+                divfirstname.classList.add('text-gray-900')
+
+                divfirstname.text = `prenom : ${studentsJSON.students[i].lastname}`
+                card.appendChild(divfirstname).innerHTML = divfirstname.text
+            }
         })
     });
+
+
